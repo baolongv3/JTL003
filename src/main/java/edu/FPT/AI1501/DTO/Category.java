@@ -1,11 +1,15 @@
 package edu.FPT.AI1501.DTO;
 
 public class Category {
-    String id,name;
+    String id, name;
 
     public Category(String id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Category(String id) {
+        this.id = id;
     }
 
     public String getId() {
@@ -23,5 +27,10 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
-    
+
+    public boolean equals(Object category) {
+        return this.getId().equals(((Category) category).getId())
+                || this.getName().equals(((Category) category).getName());
+
+    }
 }

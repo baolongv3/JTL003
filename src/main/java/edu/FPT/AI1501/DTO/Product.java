@@ -3,21 +3,20 @@ package edu.FPT.AI1501.DTO;
 public class Product {
     String id;
     String name;
-    Integer quantity;
     Double price;
-    Category category;
+    String categoryID;
 
-    public Product(String id, String name, Integer quantity, Double price, Category category) {
+    public Product(String id, String name, Double price, String categoryID) {
         this.id = id;
         this.name = name;
-        this.quantity = quantity;
         this.price = price;
-        this.category = category;
+        this.categoryID = categoryID;
     }
 
-    
+    public Product(String id) {
+        this.id = id;
+    }
 
-    
     public String getId() {
         return id;
     }
@@ -34,14 +33,6 @@ public class Product {
         this.name = name;
     }
 
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
     public Double getPrice() {
         return price;
     }
@@ -50,17 +41,20 @@ public class Product {
         this.price = price;
     }
 
-    public Category getCategory() {
-        return category;
+    public String getCategoryID() {
+        return categoryID;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategoryID(String categoryID) {
+        this.categoryID = categoryID;
     }
 
-    
+    public boolean equals(Object product) {
+        return this.getId().equals(((Product) product).getId());
+    }
+
+   
 
     
-
 
 }
