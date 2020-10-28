@@ -94,7 +94,13 @@ public class CategoryList extends ArrayList<Category> {
     }
 
     private void update(int searchIndex) {
-
+        String name = InputUtils.inputName(true);
+        if(EssentialUtils.isEmptyString(name)){
+            System.out.println("Update Aborted!");
+        } else{
+            this.get(searchIndex).setName(name);
+            System.out.println("Update Completed!");
+        }
     }
 
     private boolean delete(int searchIndex){   

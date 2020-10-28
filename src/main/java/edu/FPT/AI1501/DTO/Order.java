@@ -1,30 +1,39 @@
 package edu.FPT.AI1501.DTO;
 
 public class Order {
-    Product product;
+    String productId;
     String name;
+    Integer quantity;
 
-    public Order(Product product, String name) {
-        this.product = product;
+    public Order(String name, String productId,Integer quantity) {
+        this.productId = productId;
+        this.quantity = quantity;
         this.name = name;
     }
 
-    public Product getProduct() {
-        return product;
+    public String getProductId() {
+        return productId;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
-    public String getName() {
-        return name;
+    public Integer getQuantity(){
+        return quantity;
     }
 
-    public void setName(String name) {
+    public void setQuantity(Integer quantity){
+        this.quantity = quantity;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public void setName(String name){
         this.name = name;
     }
-
     
 
 }
